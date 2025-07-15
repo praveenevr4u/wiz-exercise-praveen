@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Docker
 A Dockerfile has been provided to run this application.  The default port exposed is 8080.
 
