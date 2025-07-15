@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasky
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasky
+  template:
+    metadata:
+      labels:
+        app: tasky
+    spec:
+      serviceAccountName: tasky-sa
+      containers:
+      - name: tasky
+        image: praveenjohnkumar/tasky:latest-1
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://admin:secret@54.179.228.33:27017/tasky?authSource=admin"
