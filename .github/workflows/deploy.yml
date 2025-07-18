@@ -40,6 +40,6 @@ jobs:
 
     - name: Deploy to EKS using `latest` image
       run: |
-        kubectl apply -f deployment.yaml
-        kubectl apply -f service.yaml
-        kubectl apply -f tasky-ingress.yaml
+        kubectl apply --validate=false -f deployment.yaml
+        kubectl apply --validate=false -f service.yaml
+        kubectl apply --validate=false -f tasky-ingress.yaml
