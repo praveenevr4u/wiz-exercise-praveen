@@ -15,7 +15,11 @@ spec:
       serviceAccountName: tasky-sa
       containers:
       - name: tasky
-        image: praveenjohnkumar/tasky:latest-1
+        image: praveenjohnkumar/tasky:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
         env:
         - name: MONGODB_URI
           value: "mongodb://admin:secret@54.179.228.33:27017/tasky?authSource=admin"
+
